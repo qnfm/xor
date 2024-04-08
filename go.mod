@@ -1,7 +1,3 @@
-module at/xorgo
+module github.com/qnfm/xor
 
-go 1.20
-
-require github.com/lukechampine/fastxor v0.0.0-20210322201628-b664bed5a5cc
-
-require golang.org/x/sys v0.8.0 // indirect
+go 1.21.6
