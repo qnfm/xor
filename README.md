@@ -37,7 +37,7 @@ Replace <input file 1>, <input file 2>, and <output file> with the paths to your
 
 ## Benchmark
 
-``bash
+```bash
 go test -benchmem -bench=.
 ```
 
