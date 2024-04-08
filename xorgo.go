@@ -23,11 +23,7 @@ func main() {
 		log.Fatal(err)
 	}
 	batch := fi.Size() / 1024
-	// fmt.Println(fi.Size())
-	// fi, err = in2.Stat()
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
+
 	o, err := os.Create(os.Args[3])
 	if err != nil {
 		log.Println(err)
