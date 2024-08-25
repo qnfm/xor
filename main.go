@@ -25,7 +25,7 @@ import (
 )
 
 // XorFiles reads the content of two files, performs XOR operation on them, and writes the result to an output file.
-func xorFiles(file1, file2, output []byte) {
+func XorFiles(file1, file2, output []byte) {
 
 	// Call the C function to perform the XOR operation
 	C.xor_avx2((*C.uint8_t)(unsafe.Pointer(&output[0])), (*C.uint8_t)(unsafe.Pointer(&file1[0])), (*C.uint8_t)(unsafe.Pointer(&file2[0])), C.size_t(len(file1)))
@@ -34,7 +34,7 @@ func xorFiles(file1, file2, output []byte) {
 
 func main() {
 	if len(os.Args) != 4 {
-		fmt.Println("Usage: xorfiles <input file 1> <input file 2> <output file>")
+		fmt.Println("Usage: xor <input file 1> <input file 2> <output file>")
 		return
 	}
 
@@ -52,7 +52,7 @@ func main() {
 
 	out := make([]byte, len(in1))
 	// Perform the XOR operation
-	xorFiles(in1, in2, out)
+	XorFiles(in1, in2, out)
 
 	outputPath := os.Args[3]
 	err = os.WriteFile(outputPath, out, 0644)

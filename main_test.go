@@ -16,7 +16,7 @@ func benchXOROperation(b *testing.B, size int) {
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
 		// Call the C function to perform the XOR operation
-		xorFiles(data1, data2, output)
+		XorFiles(data1, data2, output)
 	}
 }
 
